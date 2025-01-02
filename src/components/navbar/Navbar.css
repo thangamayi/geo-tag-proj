@@ -1,0 +1,70 @@
+/* Base styles */
+nav {
+  background-color: #1e2a38; 
+  color: white;
+  padding: 20px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width:90vw;
+  margin: 0 auto;
+}
+
+.logo-sec img {
+  max-height: 50px;  /* Ensure the logo doesn't take up too much vertical space */
+  width: auto;
+}
+
+.topic-bar {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.topic-bar p {
+  margin: 0;
+  color: #fff;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-sec img {
+    max-height: 40px;  /* Reduce logo size on smaller screens */
+  }
+
+  .topic-bar {
+    font-size: 16px;  /* Slightly reduce font size */
+    margin-top: 10px;  /* Add margin for spacing */
+  }
+}
+
+/* Mobile Portrait (320px - 375px) */
+@media (max-width: 375px) {
+  nav {
+    padding: 10px 15px; /* Reduce padding on small screens */
+  }
+
+  .container {
+    padding: 10px 0; /* Add padding for better spacing */
+  }
+
+  .logo-sec img {
+    max-height: 35px;  /* Further reduce the logo size */
+  }
+
+  .topic-bar {
+    font-size: 14px;  /* Smaller font size */
+    margin-top: 8px;
+  }
+}

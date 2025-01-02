@@ -1,0 +1,262 @@
+/* Base styles for larger screens */
+.main-container {
+  max-width: 800px;
+  margin: 100px auto; /* Center the container */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  padding: 20px;
+}
+
+.HomeHeader {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.HeaderContent p {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+input[type="file"],
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  display: block;
+}
+
+select {
+  background-color: #fff;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Image preview styles */
+.image-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.image-item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.remove-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color:transparent;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.remove-image:hover {
+  background-color: darkred;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 15px;
+  }
+
+  .HomeHeader {
+    text-align: center;
+  }
+
+  .HeaderContent p {
+    font-size: 24px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  select,
+  input[type="file"],
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .image-preview {
+    justify-content: center;
+  }
+
+  .image-item {
+    width: 80px;
+    height: 80px;
+  }
+
+  .preview-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Portrait (320px - 375px) */
+@media (min-width: 320px) and (max-width: 375px) {
+  .main-container {
+    padding: 12px;
+  }
+
+  .HeaderContent p {
+    font-size: 22px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  select,
+  input[type="file"],
+  button {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .image-preview {
+    justify-content: center;
+  }
+
+  .image-item {
+    width: 60px;
+    height: 60px;
+  }
+
+  .preview-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
+/* Very Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .main-container {
+    padding: 10px;
+  }
+
+  .HomeHeader {
+    margin-bottom: 10px;
+  }
+
+  .HeaderContent p {
+    font-size: 20px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  select,
+  input[type="file"],
+  button {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .image-preview {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .image-item {
+    width: 50px;
+    height: 50px;
+  }
+
+  .preview-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  button {
+    font-size: 13px;
+  }
+}
+
+/* Very Small Screens with extreme reduction (max-width: 320px) */
+@media (max-width: 320px) {
+  .main-container {
+    padding: 8px;
+  }
+
+  .HeaderContent p {
+    font-size: 18px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  select,
+  input[type="file"],
+  button {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .image-preview {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .image-item {
+    width: 45px;
+    height: 45px;
+  }
+
+  .preview-image {
+    width: 45px;
+    height: 45px;
+  }
+
+  button {
+    font-size: 12px;
+  }
+}

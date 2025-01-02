@@ -1,0 +1,175 @@
+/* General Styles for Contact Page */
+.contact {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+}
+
+/* Header Section Styles */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.header h2 {
+  font-size: 1.5em;
+  color: #666;
+}
+
+/* Title Content Styling (function name, date, department) */
+.titleContent {
+  display: flex;
+  flex-direction: column; /* Change to column to stack elements vertically */
+  align-items: center; /* Center the elements */
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.titleContent .date {
+  font-size: 1.1em;
+  color: #333;
+  margin-left: 70rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+}
+
+.titleContent .functionName {
+  font-size: 1.4em;
+  color: #444;
+  margin-bottom: 40px; /* Space between function name and department */
+  padding: 30px;
+  font-weight: 900;
+  font-family: Arial,sans-serif;
+  text-transform: uppercase;
+}
+
+.titleContent .department {
+  font-size: 1.2em;
+  color: #444;
+  margin-right: 60rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.titleContent p {
+  display: inline-block;
+  font-size: 1em;
+  margin-left: 5px;
+  color: #555;
+}
+
+/* Image Section Styling */
+.ImageContainer {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Image Content to Show Images in 4:3 Ratio in Rows of 2 */
+.imageContent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  gap: 10px;
+  justify-items: center;
+  padding-bottom: 10px;
+}
+
+.imageContent img {
+  width: 133px;  /* Width to maintain the 4:3 aspect ratio */
+  height: 100px; /* Height to maintain the 4:3 aspect ratio */
+  object-fit: cover; /* Crop the image to fill the aspect ratio */
+  border-radius: 5px;
+}
+
+.imageContent p {
+  color: #777;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+/* Print Button (Upload) Section */
+.print {
+  display: flex;
+  justify-content: center;
+}
+
+.upload {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload:hover {
+  background-color: #45a049;
+}
+
+/* Additional Styles for Print Page */
+@media print {
+  /* Reset contact page styling for print */
+  .contact {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    width: 100%; /* Ensure the content takes full width on the print page */
+  }
+
+  /* Header styling for print */
+  .header h1, .header h2 {
+    font-size: 24px;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  /* Title content styling */
+  .titleContent {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Image section for print */
+  .ImageContainer {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+
+  /* Display images in rows of 2 with 4:3 ratio */
+  .imageContent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    gap: 15px; /* Increase gap between images */
+    justify-items: center;
+    margin-top: 10px;
+  }
+
+  .imageContent img {
+    width: 133px;  /* Width to maintain the 4:3 aspect ratio */
+    height: 100px; /* Height to maintain the 4:3 aspect ratio */
+    object-fit: cover; /* Crop the image to fill the aspect ratio */
+    border-radius: 5px;
+  }
+
+  /* Hide the upload button and print button during printing */
+  .upload, .print {
+    display: none;
+  }
+}
