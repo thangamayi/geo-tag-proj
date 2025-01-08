@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Make sure to install react-router-dom
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
-import './Home.css';
+import "./Home.css";
 
 export const Home = () => {
-  const [functionName, setFunctionName] = useState('');
-  const [date, setDate] = useState('');
-  const [department, setDepartment] = useState(''); // State for department
+  const [functionName, setFunctionName] = useState("");
+  const [date, setDate] = useState("");
+  const [department, setDepartment] = useState("");
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
 
@@ -14,50 +14,51 @@ export const Home = () => {
     const files = Array.from(event.target.files);
     const newImages = files.map((file) => ({
       file,
-      preview: URL.createObjectURL(file), // Create a preview URL
+      preview: URL.createObjectURL(file),
     }));
-    setImages((prevImages) => [...prevImages, ...newImages]); // Append new images to existing ones
+    setImages((prevImages) => [...prevImages, ...newImages]);
   };
 
   const handleRemoveImage = (index) => {
     const updatedImages = images.filter((_, i) => i !== index);
-
-    // Revoke the URL for the removed image
-    URL.revokeObjectURL(images[index].preview);
-
+    URL.revokeObjectURL(images[index].preview); // Clean up memory
     setImages(updatedImages);
   };
 
-  const handleNavigate = () => {
-    const imageFiles = images.map((image) => image.file);
-    const imageUrls = imageFiles.map((file) => URL.createObjectURL(file));
-    const imageParams = imageUrls.join(','); // Join image URLs with a comma for query string
-    navigate(`/contact?functionName=${functionName}&date=${date}&department=${department}&images=${imageParams}`);
+  const handleNavigate = (param) => {
+    console.log(param)
+    navigate("/" + param, {
+      state: {
+        functionName,
+        eventDate: date,
+        departmentName: department,
+        uploadedImages: images.map((image) => image.file), // Pass image files
+      },
+    });
   };
-
   return (
-    <div className='main-container'>
-    <div className='content'>
-      <header className='HomeHeader'>
-        <div className='HeaderContent'>
-          <p>UPLOAD DETAILS</p>
-        </div>
-      </header>
+    <div className="main-container">
+      <div className="content">
+        <header className="HomeHeader">
+          <div className="HeaderContent">
+            <p>UPLOAD DETAILS</p>
+          </div>
+        </header>
 
-      <input
-        type="text"
-        placeholder="Enter Function Name"
-        value={functionName}
-        onChange={(e) => setFunctionName(e.target.value)}
-      />
-      <input
-        type="date"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-      />
-      <select
+        <input
+          type="text"
+          placeholder="Enter Function Name"
+          value={functionName}
+          onChange={(e) => setFunctionName(e.target.value)}required
+        />
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}required
+        />
+       <select
         value={department}
-        onChange={(e) => setDepartment(e.target.value)} >
+        onChange={(e) => setDepartment(e.target.value)} required>
      
         <option value="" disabled>
           Select Department
@@ -80,28 +81,29 @@ export const Home = () => {
         <option value="Department of Computer Science and Applications">Department of Computer Science and Applications</option>
         <option value="Department of Food Science and Technology">Department of Food Science and Technology </option>
       </select>
-      <input
-        type="file"
-        multiple
-        onChange={handleFileChange}
-      />
-      <div className="image-preview">
-        {images.map((image, index) => (
-          <div key={index} className="image-item">
-            <img
-              src={image.preview}
-              alt={`preview-${index}`}
-              className="preview-image"
-            />
       
-              <RxCross2  className="remove-image"
-              onClick={() => handleRemoveImage(index)}/>
-            
-          </div>
-        ))}
+        <input type="file" multiple onChange={handleFileChange} />
+        <div className="image-preview">
+          {images.map((image, index) => (
+            <div key={index} className="image-item">
+              <img
+                src={image.preview}
+                alt={`preview-${index}`}
+                className="preview-image"
+              />
+              <RxCross2
+                className="remove-image"
+                onClick={() => handleRemoveImage(index)}
+              />
+            </div>
+          ))}
+        </div>
+        <button className="detail-submit" onClick={() => handleNavigate('layout')}>
+          Choose Layout
+        </button>
       </div>
-      <button onClick={handleNavigate}>Submit</button>
-    </div>
     </div>
   );
 };
+
+export default Home;

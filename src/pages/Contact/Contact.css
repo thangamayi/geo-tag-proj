@@ -1,175 +1,207 @@
-/* General Styles for Contact Page */
-.contact {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+.preview-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* margin: 20px; */
+  width: 100%;
+}
+
+.img-preview {
+  font-family: "Arial", sans-serif;
+  width: 100%; /* Adjust width to be more flexible */
+  /* margin: 0 auto; */
+  text-align: center;
+  /* background-color: #f9f9f9; */
   padding: 20px;
-  background-color: #f4f4f9;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   border-radius: 8px;
 }
 
-/* Header Section Styles */
-.header {
-  text-align: center;
+h2 {
+  font-size: 28px;
+  color: #2c3e50;
   margin-bottom: 20px;
-}
-
-.header h1 {
-  font-size: 2.5em;
-  color: #333;
-}
-
-.header h2 {
-  font-size: 1.5em;
-  color: #666;
-}
-
-/* Title Content Styling (function name, date, department) */
-.titleContent {
-  display: flex;
-  flex-direction: column; /* Change to column to stack elements vertically */
-  align-items: center; /* Center the elements */
-  margin-bottom: 20px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.titleContent .date {
-  font-size: 1.1em;
-  color: #333;
-  margin-left: 70rem;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: 900;
-}
-
-.titleContent .functionName {
-  font-size: 1.4em;
-  color: #444;
-  margin-bottom: 40px; /* Space between function name and department */
-  padding: 30px;
-  font-weight: 900;
-  font-family: Arial,sans-serif;
   text-transform: uppercase;
-}
-
-.titleContent .department {
-  font-size: 1.2em;
-  color: #444;
-  margin-right: 60rem;
-  font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
 }
 
-.titleContent p {
-  display: inline-block;
-  font-size: 1em;
-  margin-left: 5px;
-  color: #555;
+.doc-header {
+  display: flex !important;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  /* border: 2px solid black; */
+  border-bottom: 2px solid black;
+  /* border-radius: 8px; */
+  background-color: #ffffff;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
 }
 
-/* Image Section Styling */
-.ImageContainer {
-  margin-top: 20px;
-  border: 1px solid #ddd;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 5px;
-}
-
-/* Image Content to Show Images in 4:3 Ratio in Rows of 2 */
-.imageContent {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 images per row */
-  gap: 10px;
-  justify-items: center;
-  padding-bottom: 10px;
-}
-
-.imageContent img {
-  width: 133px;  /* Width to maintain the 4:3 aspect ratio */
-  height: 100px; /* Height to maintain the 4:3 aspect ratio */
-  object-fit: cover; /* Crop the image to fill the aspect ratio */
-  border-radius: 5px;
-}
-
-.imageContent p {
-  color: #777;
-  font-size: 1.1em;
-  margin-top: 10px;
-}
-
-/* Print Button (Upload) Section */
-.print {
+.head-logo {
   display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.clg-logo {
+  width: 10vh;
+  max-height: 70px; /* Ensure the logo has a proper height */
+}
+
+.text-section {
+  flex: 3;
+  text-align:end;
+}
+
+.text-section h2 {
+  margin: 0;
+  font-size: 17px;
+  color: black;
+  font-weight: bold;
+}
+
+.text-section h3 {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.text-section p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.information {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #2c3e50;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.information p {
+  margin: 35px 0;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  /* margin-left: 58rem; */
+}
+
+.information h4 {
+  font-size: 25px;
+  /* margin-top: 10px; */
+  text-transform: uppercase;
+  text-align: center;
+
+}
+
+.image-gallery {
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 15px;
+  margin-top: 50px;
+  margin-left: 18rem; */
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+  gap: 20px; /* Adds space between images */
+  padding: 20px; /* Optional padding around the gallery */
+}
+
+.image-item {
+  display: flex;
+  justify-content: center; /* Center the image in the item */
+  align-items: center; /* Center the image vertically */
+  height: 25vh;
+  width: 100%;
+}
+
+.image-item img {
+  /* width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease; */
+
+  width: 100% !important; /* Ensures the image doesn't overflow its container */
+  height: auto; /* Maintains the image aspect ratio */
+  border-radius: 8px; /* Optional, for rounded corners */
+
+}
+
+.preview-image {
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+     width: 45vw !important;
+     height: 20vh !important;
+     padding: 1vh;
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.download {
+  padding: 14px 28px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10vh;
+}
+
+.download:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px);
+}
+
+.image-Container {
+  min-width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.upload {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1.1em;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.image-holder {
+  width: 44vw;
+  height: 22vh;
+  padding: 1vh;
 }
 
-.upload:hover {
-  background-color: #45a049;
+.flex-holder {
+  width: 30vw;
+  height: 16vh;
+  padding: 1vh;
 }
 
-/* Additional Styles for Print Page */
-@media print {
-  /* Reset contact page styling for print */
-  .contact {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    width: 100%; /* Ensure the content takes full width on the print page */
-  }
-
-  /* Header styling for print */
-  .header h1, .header h2 {
-    font-size: 24px;
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  /* Title content styling */
-  .titleContent {
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  /* Image section for print */
-  .ImageContainer {
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-  }
-
-  /* Display images in rows of 2 with 4:3 ratio */
-  .imageContent {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
-    gap: 15px; /* Increase gap between images */
-    justify-items: center;
-    margin-top: 10px;
-  }
-
-  .imageContent img {
-    width: 133px;  /* Width to maintain the 4:3 aspect ratio */
-    height: 100px; /* Height to maintain the 4:3 aspect ratio */
-    object-fit: cover; /* Crop the image to fill the aspect ratio */
-    border-radius: 5px;
-  }
-
-  /* Hide the upload button and print button during printing */
-  .upload, .print {
-    display: none;
-  }
+.round-holder{
+  width: 50vw;
+  height: 25vh;
+  padding: 1vh;
 }
+
+.priview-images {
+  width: 100%;
+  height: 100%;
+}
+
+.Functiontitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+

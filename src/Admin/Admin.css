@@ -1,0 +1,16 @@
+.app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    flex-direction: column;
+}
+.formstyle{
+    padding: 20px;
+    border: 1px solid black;
+    width: 25%;
+    text-align: center;
+}
+.form-control{
+    border-radius: black !important;
+}

@@ -1,15 +1,18 @@
-/* Base styles for larger screens */
 .main-container {
-  max-width: 800px;
-  margin: 100px auto; /* Center the container */
+  display: flex;
+  justify-content: center;
   padding: 20px;
-  font-family: Arial, sans-serif;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: 50px auto;
 }
 
 .content {
+  width: 100%;
   padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .HomeHeader {
@@ -25,26 +28,60 @@
 
 input[type="text"],
 input[type="date"],
-select,
-input[type="file"],
-button {
+select {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box;
+  font-size: 16px;
 }
 
 input[type="file"] {
-  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
 }
 
-select {
-  background-color: #fff;
+.image-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
 }
 
-button {
+.image-item {
+  position: relative;
+  width: calc(33.33% - 10px); /* Default for larger screens */
+  max-width: 150px;
+  overflow: hidden;
+}
+
+.preview-image {
+  width: 14vw;
+  height: 10rem;
+  /* object-fit: cover; */
+  border-radius: 4px;
+}
+
+.remove-image {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #ff0000;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.remove-image:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+
+.detail-submit {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -55,93 +92,34 @@ button {
   width: 100%;
 }
 
-button:hover {
+.detail-submit:hover {
   background-color: #45a049;
 }
 
-/* Image preview styles */
-.image-preview {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 15px;
-}
 
-.image-item {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
-}
-
-.preview-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.remove-image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color:transparent;
-  color: white;
-  border: none;
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.remove-image:hover {
-  background-color: darkred;
-}
-
-/* Media Queries for Responsiveness */
-
-/* Tablets and smaller screens (max-width: 768px) */
 @media (max-width: 768px) {
   .main-container {
     padding: 15px;
   }
 
-  .HomeHeader {
-    text-align: center;
-  }
-
-  .HeaderContent p {
+  .HomeHeader p {
     font-size: 24px;
   }
 
-  input[type="text"],
-  input[type="date"],
-  select,
-  input[type="file"],
-  button {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .image-preview {
-    justify-content: center;
-  }
-
   .image-item {
-    width: 80px;
-    height: 80px;
+    width: calc(50% - 10px); /* 2 images per row */
   }
 
   .preview-image {
-    width: 80px;
-    height: 80px;
+    max-width: 100%; /* Ensure preview image fills the container */
   }
 
-  button {
-    font-size: 16px;
+  .detail-submit {
+    font-size: 14px;
+    padding: 10px;
   }
 }
 
-/* Mobile Portrait (320px - 375px) */
 @media (min-width: 320px) and (max-width: 375px) {
   .main-container {
     padding: 12px;
@@ -151,19 +129,6 @@ button:hover {
     font-size: 22px;
   }
 
-  input[type="text"],
-  input[type="date"],
-  select,
-  input[type="file"],
-  button {
-    padding: 8px;
-    font-size: 14px;
-  }
-
-  .image-preview {
-    justify-content: center;
-  }
-
   .image-item {
     width: 60px;
     height: 60px;
@@ -174,19 +139,15 @@ button:hover {
     height: 60px;
   }
 
-  button {
+  .detail-submit {
     font-size: 14px;
+    padding: 10px;
   }
 }
 
-/* Very Small Screens (max-width: 480px) */
 @media (max-width: 480px) {
   .main-container {
     padding: 10px;
-  }
-
-  .HomeHeader {
-    margin-bottom: 10px;
   }
 
   .HeaderContent p {
@@ -197,14 +158,13 @@ button:hover {
   input[type="date"],
   select,
   input[type="file"],
-  button {
+  .detail-submit {
     padding: 8px;
     font-size: 13px;
   }
 
   .image-preview {
     justify-content: center;
-    margin-top: 10px;
   }
 
   .image-item {
@@ -217,12 +177,11 @@ button:hover {
     height: 50px;
   }
 
-  button {
+  .detail-submit {
     font-size: 13px;
   }
 }
 
-/* Very Small Screens with extreme reduction (max-width: 320px) */
 @media (max-width: 320px) {
   .main-container {
     padding: 8px;
@@ -236,14 +195,13 @@ button:hover {
   input[type="date"],
   select,
   input[type="file"],
-  button {
+  .detail-submit {
     padding: 6px;
     font-size: 12px;
   }
 
   .image-preview {
     justify-content: center;
-    margin-top: 10px;
   }
 
   .image-item {
@@ -256,7 +214,7 @@ button:hover {
     height: 45px;
   }
 
-  button {
+  .detail-submit {
     font-size: 12px;
   }
 }
